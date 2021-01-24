@@ -10,6 +10,7 @@ const App = () => {
   //   const [advice, setAdvice] = useState("Click the button to get an advice");
   const [quote, setQuote] = useState({});
   const [loading, setLoading] = useState(false);
+  const [charLength, setCharLength] = useState(0);
   //   const [disable, setDisable] = useState(false);
 
   //   const fetchAdvice = async () => {
@@ -27,7 +28,7 @@ const App = () => {
     setLoading(true);
     const randomQuote =
       quotesData[Math.floor(Math.random() * quotesData.length)];
-    // console.log(randomQuote);
+    setCharLength(randomQuote.text.length);
     setLoading(false);
     setQuote({ quote: randomQuote.text, author: randomQuote.author });
   };
@@ -41,7 +42,9 @@ const App = () => {
     return (
       <div className="app">
         <div className="card">
-          <h1 className="heading">{quote.quote}</h1>
+          <h1 className={charLength > 80 ? "heading-small" : "heading"}>
+            {quote.quote}
+          </h1>
           <p className="author">-{quote.author ? quote.author : "anonymous"}</p>
           <button
             className="button"
