@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./app.css";
+import "./App.css";
 // import axios from "axios";
 import { quotesData } from "./quotes.data";
 
