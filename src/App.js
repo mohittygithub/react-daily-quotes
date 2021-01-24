@@ -42,7 +42,7 @@ const App = () => {
       <div className="app">
         <div className="card">
           <h1 className="heading">{quote.quote}</h1>
-          <p className="author">-{quote.author}</p>
+          <p className="author">-{quote.author ? quote.author : "anonymous"}</p>
           <button
             className="button"
             onClick={fetchQuotes}
@@ -57,7 +57,7 @@ const App = () => {
   return (
     <div className="app">
       <div className="card">
-        <h1 className="heading">Loading advice...</h1>
+        <h1 className="heading">Loading quote...</h1>
         <button
           className="button"
           onClick={fetchQuotes}
