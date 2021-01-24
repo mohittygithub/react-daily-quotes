@@ -35,6 +35,7 @@ html {
   height: 582px;
   font-family: "Montserrat", sans-serif;
   font-size: 1.4rem;
+  text-overflow: ellipsis;
 }
 .author {
   font-size: 0.9rem;
